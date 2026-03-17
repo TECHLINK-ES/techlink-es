@@ -47,9 +47,7 @@ const pricingData = [
       { name: 'Basic Systems', price: 'M3500 - M5000' },
       { name: 'Business Platforms', price: 'M5,000 - M10,000' },
       { name: 'Enterprise Systems', price: 'M10,000+' },
-    ],
-     category: 'Desktop Application Development',
-    items: [
+    
       { name: 'Standard Desktop Systems', price: 'M6000 - M9000' },
       { name: 'Advanced Desktop Systems', price: 'M10,000' },
     ],

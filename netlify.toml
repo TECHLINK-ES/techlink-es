@@ -1,0 +1,15 @@
+[build]
+  # Tell Netlify where the frontend code is located
+  base = "client"
+  
+  # Command to build the site
+  command = "npm run build"
+  
+  # Folder where the built files are output
+  publish = "dist"
+
+# Redirect all requests to index.html (Fixes page refresh issues)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
