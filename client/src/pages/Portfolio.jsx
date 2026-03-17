@@ -15,37 +15,43 @@ const projects = [
     title: 'Corporate Security Overhaul',
     category: 'Security Systems',
     description: 'Installed a comprehensive 16-camera HD surveillance system.',
-    image: 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg',
+    // CCTV Camera / Security Tool
+    image: 'https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     title: 'E-Commerce Platform',
     category: 'Software Development',
     description: 'Developed a custom online marketplace.',
-    image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg',
+    // Code on Screen / Tech
+    image: 'https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     title: 'Network Upgrade',
     category: 'IT Services',
     description: 'Improved network infrastructure.',
-    image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg',
+    // Server Cables and Hardware
+    image: 'https://images.pexels.com/photos/1095814/pexels-photo-1095814.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     title: 'Cybersecurity Training',
     category: 'Cybersecurity',
     description: 'Training for 200+ employees.',
-    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg',
+    // Digital Lock / Security Concept
+    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     title: 'Event Technology',
     category: 'Event Tech',
     description: 'Live streaming & setup.',
-    image: 'https://images.pexels.com/photos/1540404/pexels-photo-1540404.jpeg',
+    // Camera Equipment / Tripod
+    image: 'https://images.pexels.com/photos/169194/pexels-photo-169194.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     title: 'Video Production',
     category: 'Multimedia',
     description: '3D animation and branding.',
-    image: 'https://images.pexels.com/photos/2789320/pexels-photo-2789320.jpeg',
+    // Camera Lens / Multimedia Tool
+   image: 'https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
 ];
 

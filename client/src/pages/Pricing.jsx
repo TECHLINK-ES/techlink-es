@@ -7,9 +7,9 @@ const pricingData = [
     category: 'IT Services',
     items: [
       { name: 'IT Consultation', price: 'M150' },
-      { name: 'System Diagnosis', price: 'M250' },
-      { name: 'Virus Removal', price: 'M350' },
-      { name: 'Windows Installation', price: 'M350' },
+      { name: 'Laptop Software Repair', price: 'M250' },
+      { name: 'Virus Removal', price: 'M150' },
+      { name: 'Desktop Software Repair', price: 'M350' },
       { name: 'Linux Installation', price: 'M300' },
       { name: 'Software Installation', price: 'M200' },
     ],
@@ -17,9 +17,10 @@ const pricingData = [
   {
     category: 'Network Services',
     items: [
-      { name: 'Router Configuration', price: 'M350' },
-      { name: 'Network Setup', price: 'M800 – M2500' },
-      { name: 'Office Network Deployment', price: 'M2500 – M8000' },
+      { name: 'Small Network Setup(up to 4 devices) ', price: 'M1200' },
+      { name: 'Medium Network Setup(up to 8 devices) ', price: 'M3500 ' },
+      { name: 'Enterprise Network Setup(per devices) ', price: 'M500' },
+      { name: 'General IT Support Subscription ', price: 'Quote Required' },
     ],
   },
   {
@@ -33,9 +34,9 @@ const pricingData = [
   {
     category: 'Security Systems',
     items: [
-      { name: 'CCTV Installation', price: 'M900 per camera' },
-      { name: '4 Camera System', price: 'M4500 – M6500' },
-      { name: '8 Camera System', price: 'M8500 – M12000' },
+      { name: 'CCTV Installation', price: 'M300 per camera' },
+      { name: '4 Camera System', price: 'M4500 – M6500 (Installation exclusive)' },
+      { name: '8 Camera System', price: 'M8500 – M12000 (Installation exclusive)' },
       { name: 'Access Control Installation', price: 'M3500 – M8000' },
       { name: 'Alarm System Installation', price: 'M2500 – M7000' },
     ],
@@ -43,28 +44,26 @@ const pricingData = [
   {
     category: 'Software Development',
     items: [
-      { name: 'Basic Package', price: 'M25,000' },
-      { name: 'Professional Package', price: 'M35,000' },
-      { name: 'Enterprise Package', price: 'M45,000' },
+      { name: 'Basic Systems', price: 'M3500 - M5000' },
+      { name: 'Business Platforms', price: 'M5,000 - M10,000' },
+      { name: 'Enterprise Systems', price: 'M10,000+' },
+    ],
+     category: 'Desktop Application Development',
+    items: [
+      { name: 'Standard Desktop Systems', price: 'M6000 - M9000' },
+      { name: 'Advanced Desktop Systems', price: 'M10,000' },
     ],
   },
   {
     category: 'Multimedia Services',
     items: [
-      { name: 'Logo Animation', price: 'M800' },
+      { name: 'Logo Animation', price: 'M350' },
       { name: 'Video Editing', price: 'M1200 – M3500' },
       { name: '3D Modeling', price: 'M1500 – M4500' },
       { name: '3D Animation', price: 'M4000 – M12000' },
     ],
   },
-  {
-    category: 'Event Technology',
-    items: [
-      { name: 'Device Charging Station Setup', price: 'M1500 – M3500' },
-      { name: 'Event Network Setup', price: 'M2000 – M6000' },
-      { name: 'Technical Event Support', price: 'M1500 per day' },
-    ],
-  },
+  
 ];
 
 const Pricing = () => {
