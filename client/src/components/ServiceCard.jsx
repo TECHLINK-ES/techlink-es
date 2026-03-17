@@ -16,7 +16,7 @@ const ServiceCard = ({ icon, title, description, items }) => {
         borderColor: 'divider',
         '&:hover': {
           transform: 'translateY(-8px)',
-          boxShadow: '0 12px 40px rgba(13, 71, 161, 0.15)',
+          boxShadow: '0 12px 40px rgba(4, 40, 94, 0.15)',
           borderColor: 'secondary.main',
         },
       }}

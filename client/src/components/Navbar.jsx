@@ -19,8 +19,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-// Logo URL from your provided assets
-const LOGO_URL = 'https://z-cdn-media.chatglm.cn/files/81041a39-f797-4bae-8732-afd903ac6ae1.jpg?auth_key=1873675982-56eed3f2f7564af891922882fc060bcb-0-c863d04d5b022962728dcd7023bb9455';
+// IMPORTING LOCAL ASSET
+// Make sure the file name matches exactly what is in your assets folder
+import TechlinkIcon from '../assets/logo-icon.jpg'; 
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -44,10 +45,11 @@ const Navbar = () => {
   const drawer = (
     <Box sx={{ textAlign: 'center', height: '100%', bgcolor: 'background.default' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2, borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
+        {/* Using Local Icon */}
         <Box
           component="img"
-          src={LOGO_URL}
-          alt="Techlink Logo"
+          src={TechlinkIcon}
+          alt="Techlink Icon"
           sx={{ height: 40 }}
         />
         <IconButton onClick={handleDrawerToggle}>
@@ -97,9 +99,10 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
+            {/* Using Local Icon */}
             <Box
               component="img"
-              src={LOGO_URL}
+              src={TechlinkIcon}
               alt="Techlink Icon"
               sx={{ height: 45, mr: 1 }}
             />

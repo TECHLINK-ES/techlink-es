@@ -1,42 +1,51 @@
 import React from 'react';
-import { Container, Box, Typography, Grid, Card, CardMedia, CardContent, CardActions, Button, Chip } from '@mui/material';
+import {
+  Container,
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Chip
+} from '@mui/material';
 
 const projects = [
   {
     title: 'Corporate Security Overhaul',
     category: 'Security Systems',
-    description: 'Installed a comprehensive 16-camera HD surveillance system with remote monitoring for a financial institution in Maseru.',
-    image: 'https://images.unsplash.com/photo-1558002038-bb4237b50b11?w=600&h=400&fit=crop',
+    description: 'Installed a comprehensive 16-camera HD surveillance system.',
+    image: 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg',
   },
   {
     title: 'E-Commerce Platform',
     category: 'Software Development',
-    description: 'Developed a custom online marketplace with integrated payment gateways and inventory management.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+    description: 'Developed a custom online marketplace.',
+    image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg',
   },
   {
-    title: 'Network Infrastructure Upgrade',
+    title: 'Network Upgrade',
     category: 'IT Services',
-    description: 'Upgraded the entire network infrastructure for a government office, improving speed and reliability by 300%.',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop',
+    description: 'Improved network infrastructure.',
+    image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg',
   },
   {
-    title: 'Security Awareness Training',
+    title: 'Cybersecurity Training',
     category: 'Cybersecurity',
-    description: 'Conducted organization-wide cybersecurity training for 200+ employees of a healthcare provider.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop',
+    description: 'Training for 200+ employees.',
+    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg',
   },
   {
-    title: 'Product Launch Event',
-    category: 'Event Technology',
-    description: 'Provided full technical support including live streaming, network setup, and charging stations for a major product launch.',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=400&fit=crop',
+    title: 'Event Technology',
+    category: 'Event Tech',
+    description: 'Live streaming & setup.',
+    image: 'https://images.pexels.com/photos/1540404/pexels-photo-1540404.jpeg',
   },
   {
-    title: 'Corporate Video Production',
+    title: 'Video Production',
     category: 'Multimedia',
-    description: 'Produced a series of promotional videos including 3D animated logos and motion graphics for a retail brand.',
-    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop',
+    description: '3D animation and branding.',
+    image: 'https://images.pexels.com/photos/2789320/pexels-photo-2789320.jpeg',
   },
 ];
 
@@ -44,53 +53,57 @@ const Portfolio = () => {
   return (
     <Box>
       {/* Header */}
-      <Box sx={{ bgcolor: 'primary.main', py: 12, textAlign: 'center' }}>
-        <Container maxWidth="md">
-          <Typography variant="overline" sx={{ color: 'secondary.main', fontWeight: 700, letterSpacing: 2 }}>
-            OUR WORK
-          </Typography>
-          <Typography variant="h2" sx={{ color: 'white', fontWeight: 800, mt: 1 }}>
-            Portfolio
-          </Typography>
-          <Typography variant="h6" sx={{ color: 'rgba(255,255,255,0.8)', mt: 2, fontWeight: 400 }}>
-            Showcasing our successful projects across various industries.
-          </Typography>
-        </Container>
+      <Box sx={{ bgcolor: 'primary.main', py: 10, textAlign: 'center' }}>
+        <Typography variant="h3" sx={{ color: 'white', fontWeight: 800 }}>
+          Portfolio
+        </Typography>
       </Box>
 
-      {/* Projects Grid */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        <Grid container spacing={4}>
+      {/* Grid Container */}
+      <Container maxWidth="lg" sx={{ py: 6 }}>
+        <Grid container spacing={3}>
           {projects.map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid
+              item
+              xs={12}   // Mobile: 1 per row
+              sm={6}    // Tablet: 2 per row
+              md={4}    // Desktop: 3 per row (Strict 1 row, 3 columns layout)
+              key={index}
+            >
               <Card
-                elevation={0}
                 sx={{
                   height: '100%',
-                  borderRadius: 3,
+                  borderRadius: 2,
                   overflow: 'hidden',
+                  transition: '0.3s',
                   border: '1px solid',
                   borderColor: 'divider',
-                  transition: 'all 0.3s ease',
                   '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 12px 40px rgba(0,0,0,0.1)',
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
                   },
                 }}
               >
+                {/* Small Image - Fixed Height */}
                 <CardMedia
                   component="img"
-                  height="200"
                   image={project.image}
                   alt={project.title}
+                  sx={{
+                    width: '100%',
+                    height: 180, // Fixed small height for a compact look
+                    objectFit: 'cover',
+                  }}
                 />
-                <CardContent sx={{ p: 3 }}>
-                  <Chip label={project.category} size="small" sx={{ mb: 2, bgcolor: 'secondary.main', color: 'black', fontWeight: 600 }} />
-                  <Typography variant="h6" sx={{ fontWeight: 700, color: 'primary.dark', mb: 1 }}>
+
+                <CardContent>
+                  <Chip
+                    label={project.category}
+                    size="small"
+                    sx={{ mb: 1, bgcolor: 'secondary.main', color: 'black', fontWeight: 600 }}
+                  />
+                  <Typography variant="subtitle1" fontWeight={700} sx={{ color: 'primary.dark' }}>
                     {project.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {project.description}
                   </Typography>
                 </CardContent>
               </Card>

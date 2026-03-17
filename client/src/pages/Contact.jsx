@@ -75,6 +75,7 @@ const Contact = () => {
       {/* Form Section */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
         <Grid container spacing={6}>
+          {/* Left Column: Contact Info */}
           <Grid item xs={12} md={4}>
             <Typography variant="h4" sx={{ fontWeight: 700, color: 'primary.dark', mb: 4 }}>
               Contact Information
@@ -96,7 +97,7 @@ const Contact = () => {
               </Box>
               <Box>
                 <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Email</Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>info@techlink-es.co.ls</Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>techlinkengineeringsolutions@gmail.com</Typography>
               </Box>
             </Box>
 
@@ -106,11 +107,12 @@ const Contact = () => {
               </Box>
               <Box>
                 <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Phone</Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>+266 00 000 000</Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>+266 5963 0165</Typography>
               </Box>
             </Box>
           </Grid>
 
+          {/* Right Column: Form */}
           <Grid item xs={12} md={8}>
             <Paper elevation={0} sx={{ p: 4, borderRadius: 3, border: '1px solid', borderColor: 'divider' }}>
               <Typography variant="h5" sx={{ fontWeight: 700, color: 'primary.dark', mb: 3 }}>
@@ -118,6 +120,7 @@ const Contact = () => {
               </Typography>
               <Box component="form" onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
+                  {/* Row 1: Name & Email */}
                   <Grid item xs={12} sm={6}>
                     <TextField
                       fullWidth
@@ -141,8 +144,11 @@ const Contact = () => {
                       variant="outlined"
                     />
                   </Grid>
+
+                  {/* Row 2: Phone (Half) & Empty space OR Full Width Phone */}
+                  {/* Let's put Phone here on the left */}
                   <Grid item xs={12} sm={6}>
-                    <TextField
+                     <TextField
                       fullWidth
                       label="Phone Number"
                       name="phone"
@@ -151,7 +157,9 @@ const Contact = () => {
                       variant="outlined"
                     />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+
+                  {/* Row 3: Service Selection - Full Width for better formatting */}
+                  <Grid item xs={12}>
                     <TextField
                       fullWidth
                       select
@@ -161,6 +169,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       variant="outlined"
+                      helperText="Please select the service you are interested in"
                     >
                       {serviceOptions.map((option) => (
                         <MenuItem key={option} value={option}>
@@ -169,6 +178,8 @@ const Contact = () => {
                       ))}
                     </TextField>
                   </Grid>
+
+                  {/* Row 4: Message */}
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
@@ -200,6 +211,42 @@ const Contact = () => {
           </Grid>
         </Grid>
       </Container>
+
+            {/* Map Section - Compact Square */}
+      <Box sx={{ py: 8, bgcolor: 'background.paper' }}>
+        <Container maxWidth="md">
+          <Typography variant="h4" sx={{ fontWeight: 700, color: 'primary.dark', mb: 4, textAlign: 'center' }}>
+            Our Location
+          </Typography>
+          
+          {/* Centering the square map */}
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Paper 
+              elevation={0} 
+              sx={{ 
+                borderRadius: 3, 
+                overflow: 'hidden', 
+                border: '1px solid', 
+                borderColor: 'divider',
+                width: '100%',
+                maxWidth: 500, // Limits the size so it's not too big
+                aspectRatio: '1 / 1', // Forces a perfect square shape
+              }}
+            >
+              <Box
+                component="iframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57630.73515486938!2d27.432092348632812!3d-29.3105296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8dc98b0c25e6f9%3A0x7c9055b8c5e5a5a5!2sMaseru%2C%20Lesotho!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </Paper>
+          </Box>
+        </Container>
+      </Box>
 
       <Snackbar
         open={snackbar.open}

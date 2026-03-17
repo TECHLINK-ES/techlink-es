@@ -74,7 +74,7 @@ const Home = () => {
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={7}>
               <Chip 
-                label="Your Technology Partner in Lesotho" 
+                label={`“Connecting Technology, Securing Tomorrow.”`}
                 sx={{ 
                   bgcolor: 'rgba(255,255,255,0.15)', 
                   color: 'white', 
