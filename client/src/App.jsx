@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Box } from '@mui/material';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Footer from './components/Footer'; 
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -12,19 +12,19 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Box 
-      sx={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
         minHeight: '100vh',
-        // Global Tech Pattern Background
         bgcolor: '#f8f9fa',
         backgroundImage: 'radial-gradient(rgba(13, 71, 161, 0.08) 1px, transparent 1px)',
         backgroundSize: '20px 20px',
       }}
     >
+       
       <Navbar />
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main" sx={{ flexGrow: 1, mt: 0 }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

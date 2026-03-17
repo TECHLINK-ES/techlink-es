@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Box, Typography, Grid, TextField, Button, Paper, Snackbar, Alert, MenuItem, CircularProgress } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import emailjs from '@emailjs/browser';
 
 const serviceOptions = [
   'IT Consultation',
@@ -15,6 +16,8 @@ const serviceOptions = [
 ];
 
 const Contact = () => {
+  const formRef = useRef();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,6 +25,7 @@ const Contact = () => {
     service: '',
     message: '',
   });
+  
   const [loading, setLoading] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
 
@@ -33,23 +37,26 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     
+    // Get keys from .env file
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
+      // Send email using EmailJS
+      await emailjs.sendForm(
+        SERVICE_ID, 
+        TEMPLATE_ID, 
+        formRef.current, 
+        PUBLIC_KEY
+      );
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setSnackbar({ open: true, message: 'Message sent successfully! We will contact you soon.', severity: 'success' });
-        setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-      } else {
-        throw new Error(data.error || 'Failed to send message');
-      }
+      setSnackbar({ open: true, message: 'Message sent successfully! We will contact you soon.', severity: 'success' });
+      // Clear form
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' });
     } catch (error) {
-      setSnackbar({ open: true, message: error.message, severity: 'error' });
+      console.error('EmailJS Error:', error);
+      setSnackbar({ open: true, message: 'Failed to send message. Please try again later.', severity: 'error' });
     } finally {
       setLoading(false);
     }
@@ -118,9 +125,10 @@ const Contact = () => {
               <Typography variant="h5" sx={{ fontWeight: 700, color: 'primary.dark', mb: 3 }}>
                 Request a Quote
               </Typography>
-              <Box component="form" onSubmit={handleSubmit}>
+              {/* The ref is attached here to read form data */}
+              <Box component="form" ref={formRef} onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
-                  {/* Row 1: Name & Email */}
+                  {/* Name Field */}
                   <Grid item xs={12} sm={6}>
                     <TextField
                       fullWidth
@@ -132,6 +140,7 @@ const Contact = () => {
                       variant="outlined"
                     />
                   </Grid>
+                  {/* Email Field */}
                   <Grid item xs={12} sm={6}>
                     <TextField
                       fullWidth
@@ -144,9 +153,7 @@ const Contact = () => {
                       variant="outlined"
                     />
                   </Grid>
-
-                  {/* Row 2: Phone (Half) & Empty space OR Full Width Phone */}
-                  {/* Let's put Phone here on the left */}
+                  {/* Phone Field */}
                   <Grid item xs={12} sm={6}>
                      <TextField
                       fullWidth
@@ -157,8 +164,7 @@ const Contact = () => {
                       variant="outlined"
                     />
                   </Grid>
-
-                  {/* Row 3: Service Selection - Full Width for better formatting */}
+                  {/* Service Selection */}
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
@@ -178,8 +184,7 @@ const Contact = () => {
                       ))}
                     </TextField>
                   </Grid>
-
-                  {/* Row 4: Message */}
+                  {/* Message Field */}
                   <Grid item xs={12}>
                     <TextField
                       fullWidth
@@ -193,6 +198,7 @@ const Contact = () => {
                       variant="outlined"
                     />
                   </Grid>
+                  {/* Submit Button */}
                   <Grid item xs={12}>
                     <Button
                       type="submit"
@@ -212,14 +218,13 @@ const Contact = () => {
         </Grid>
       </Container>
 
-            {/* Map Section - Compact Square */}
+      {/* Map Section */}
       <Box sx={{ py: 8, bgcolor: 'background.paper' }}>
         <Container maxWidth="md">
           <Typography variant="h4" sx={{ fontWeight: 700, color: 'primary.dark', mb: 4, textAlign: 'center' }}>
             Our Location
           </Typography>
           
-          {/* Centering the square map */}
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Paper 
               elevation={0} 
@@ -229,13 +234,13 @@ const Contact = () => {
                 border: '1px solid', 
                 borderColor: 'divider',
                 width: '100%',
-                maxWidth: 500, // Limits the size so it's not too big
-                aspectRatio: '1 / 1', // Forces a perfect square shape
+                maxWidth: 500, 
+                aspectRatio: '1 / 1',
               }}
             >
               <Box
                 component="iframe"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57630.73515486938!2d27.432092348632812!3d-29.3105296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8dc98b0c25e6f9%3A0x7c9055b8c5e5a5a5!2sMaseru%2C%20Lesotho!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.6412863078363!2d27.475540835474458!3d-29.322863270534626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8dcb40e6d04fef%3A0xcfd21925e42fadfc!2sMFHG%2B7JR%2C%20Maseru%20100!5e1!3m2!1sen!2sls!4v1773756505725!5m2!1sen!2sls"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
