@@ -16,7 +16,7 @@ const coreValues = [
 const founders = [
   {
     name: 'Likano Mbobo',
-    role: 'Business & Delivery Lead',
+    role: 'Business & Delivery Lead Engineer',
     education: 'BSc Software Engineering with Multimedia – Limkokwing University of Creative Technology',
     bio: 'Likano is the visionary behind the company, combining technical expertise with strategic business insight. He was awarded Best Performance in Software Engineering, Class of 2025, by Econet Telecom Lesotho, demonstrating academic and practical excellence. Likano’s entrepreneurial journey and leadership are supported by JR Ventures, which also recognized his achievements in sports performance.',
     certifications: [
@@ -27,7 +27,7 @@ const founders = [
   },
   {
     name: 'Kananelo Mosututsoana',
-    role: 'Product & Tech Lead',
+    role: 'Product & Tech Lead Engineer',
     education: 'BSc Software Engineering with Multimedia – Limkokwing University of Creative Technology',
     bio: 'Kananelo brings a blend of software engineering and multimedia creativity to the team. He was awarded Best Performance in Coding and Programming with Python at the Samsung Innovation Campus. Kananelo specializes in product development, software solutions, cybersecurity, and technical training, ensuring that our products are innovative and reliable.',
     certifications: [

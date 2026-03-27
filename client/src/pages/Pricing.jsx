@@ -35,8 +35,9 @@ const pricingData = [
     category: 'Security Systems',
     items: [
       { name: 'CCTV Installation', price: 'M300 per camera' },
-      { name: '4 Camera System', price: 'M4500 – M6500 (Installation exclusive)' },
-      { name: '8 Camera System', price: 'M8500 – M12000 (Installation exclusive)' },
+      { name: '2-4 Camera System', price: 'M2500 – M5500 (Installation exclusive)' },
+      { name: '4-8 Camera System', price: 'M5500 – M15500 (Installation exclusive)' },
+      { name: '8-16+ Camera System', price: 'M15500 – M30500+ (Installation exclusive)' },
       { name: 'Access Control Installation', price: 'M3500 – M8000' },
       { name: 'Alarm System Installation', price: 'M2500 – M7000' },
     ],
@@ -56,6 +57,7 @@ const pricingData = [
     category: 'Multimedia Services',
     items: [
       { name: 'Logo Animation', price: 'M350' },
+      { name: '20sec Animated Ads', price: 'M750' },
       { name: 'Video Editing', price: 'M1200 – M3500' },
       { name: '3D Modeling', price: 'M1500 – M4500' },
       { name: '3D Animation', price: 'M4000 – M12000' },
