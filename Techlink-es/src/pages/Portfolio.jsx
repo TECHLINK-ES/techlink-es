@@ -10,48 +10,52 @@ import {
   Chip
 } from '@mui/material';
 
+// 1. REPLACE THIS with your actual Cloud Name from the Dashboard
+const CLOUD_NAME = "dkcifbzf2"; 
+
+// 2. Helper function to generate optimized URLs
+// This automatically resizes to 600px width and optimizes format (WebP/AVIF) for speed
+const getCloudinaryUrl = (publicId) => 
+  `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/q_auto,f_auto,w_600/${publicId}`;
+
 const projects = [
   {
     title: 'Corporate Security Overhaul',
     category: 'Security Systems',
     description: 'Installed a comprehensive 16-camera HD surveillance system.',
-    // CCTV Camera / Security Tool
-    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621109/61TMlo83iXL._AC_UF1000_1000_QL80__wudksy.jpg',
+    // 3. REPLACE 'sample' with your actual image Public ID from Cloudinary
+    // Example: if your image is named 'cctv_project', put 'cctv_project'
+    publicId: 'Cctv_hfxtlk', 
   },
   {
     title: 'E-Commerce Platform',
     category: 'Software Development',
     description: 'Developed a custom online marketplace.',
-    // Code on Screen / Tech
-    image: 'https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=600',
+    publicId: 'Desktop_fkwyac',
   },
   {
     title: 'Network Upgrade',
     category: 'IT Services',
     description: 'Improved network infrastructure.',
-    // Server Cables and Hardware
-    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621112/Neetttt_clmqdx.jpg',
+    publicId: 'Net_ktsqcj',
   },
   {
     title: 'Cybersecurity Training',
     category: 'Cybersecurity',
     description: 'Training for 200+ employees.',
-    // Digital Lock / Security Concept
-    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621112/Cyberee_xrck8x.jpg',
+    publicId: 'Cyber_hvtzjg',
   },
   {
     title: 'Event Technology',
     category: 'Event Tech',
     description: 'Live streaming & setup.',
-    // Camera Equipment / Tripod
-    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621109/Cgarge_sqp73q.jpg',
+    publicId: 'Cgarge_sqp73q',
   },
   {
     title: 'Video Production',
     category: 'Multimedia',
     description: '3D animation and branding.',
-    // Camera Lens / Multimedia Tool
-   image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621110/multimedia_large2_xvot03.jpg',
+    publicId: 'multimedia_large2_xvot03',
   },
 ];
 
@@ -71,9 +75,9 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Grid
               item
-              xs={12}   // Mobile: 1 per row
-              sm={6}    // Tablet: 2 per row
-              md={4}    // Desktop: 3 per row (Strict 1 row, 3 columns layout)
+              xs={12}   
+              sm={6}    
+              md={4}    
               key={index}
             >
               <Card
@@ -93,11 +97,12 @@ const Portfolio = () => {
                 {/* Small Image - Fixed Height */}
                 <CardMedia
                   component="img"
-                  image={project.image}
+                  // 4. Use the helper function here
+                  image={getCloudinaryUrl(project.publicId)}
                   alt={project.title}
                   sx={{
                     width: '100%',
-                    height: 180, // Fixed small height for a compact look
+                    height: 180, 
                     objectFit: 'cover',
                   }}
                 />
