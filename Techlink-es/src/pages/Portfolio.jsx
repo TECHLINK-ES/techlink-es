@@ -16,7 +16,7 @@ const projects = [
     category: 'Security Systems',
     description: 'Installed a comprehensive 16-camera HD surveillance system.',
     // CCTV Camera / Security Tool
-    image: 'https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621109/61TMlo83iXL._AC_UF1000_1000_QL80__wudksy.jpg',
   },
   {
     title: 'E-Commerce Platform',
@@ -30,28 +30,28 @@ const projects = [
     category: 'IT Services',
     description: 'Improved network infrastructure.',
     // Server Cables and Hardware
-    image: 'https://images.pexels.com/photos/1095814/pexels-photo-1095814.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621112/Neetttt_clmqdx.jpg',
   },
   {
     title: 'Cybersecurity Training',
     category: 'Cybersecurity',
     description: 'Training for 200+ employees.',
     // Digital Lock / Security Concept
-    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621112/Cyberee_xrck8x.jpg',
   },
   {
     title: 'Event Technology',
     category: 'Event Tech',
     description: 'Live streaming & setup.',
     // Camera Equipment / Tripod
-    image: 'https://images.pexels.com/photos/169194/pexels-photo-169194.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621109/Cgarge_sqp73q.jpg',
   },
   {
     title: 'Video Production',
     category: 'Multimedia',
     description: '3D animation and branding.',
     // Camera Lens / Multimedia Tool
-   image: 'https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=600',
+   image: 'https://res.cloudinary.com/dkcifbzf2/image/upload/v1774621110/multimedia_large2_xvot03.jpg',
   },
 ];
 
