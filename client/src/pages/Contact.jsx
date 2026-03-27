@@ -94,7 +94,8 @@ const Contact = () => {
               </Box>
               <Box>
                 <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>Address</Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>Maseru, Lesotho</Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>Hillsview, Old Europa(Khali Hotel)</Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>Maseru, Lesotho 100</Typography>
               </Box>
             </Box>
 
